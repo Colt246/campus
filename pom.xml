@@ -125,6 +125,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                    <!-- Cada clase *IT en su propia JVM: Testcontainers para y arranca los
+                         contenedores en cada clase (puertos nuevos) y así Spring no reutiliza
+                         un contexto que apunta a los puertos de la clase anterior. -->
+                    <forkCount>1</forkCount>
+                    <reuseForks>false</reuseForks>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
