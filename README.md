@@ -37,6 +37,9 @@ mvn spring-boot:run
 
 Spring Boot detecta `compose.yaml` y levanta PostgreSQL, MongoDB y Redis antes de iniciar la API.
 
+PostgreSQL se publica en el puerto **5433** del equipo (no en el 5432) para no chocar con un
+PostgreSQL instalado localmente. Spring Boot detecta ese puerto automáticamente.
+
 - API: http://localhost:8080
 - Swagger UI: http://localhost:8080/swagger-ui.html
 - OpenAPI: http://localhost:8080/v3/api-docs

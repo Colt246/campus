@@ -5,7 +5,8 @@ services:
       POSTGRES_DB: campushub
       POSTGRES_USER: campushub
       POSTGRES_PASSWORD: campushub
-    ports: [ "5432:5432" ]
+    # Puerto 5433 en el anfitrión para no chocar con un PostgreSQL instalado en el equipo.
+    ports: [ "5433:5432" ]
     volumes: [ "postgres_data:/var/lib/postgresql/data" ]
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U campushub" ]
